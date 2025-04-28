@@ -11,6 +11,7 @@ export default function ReshmiIntro() {
 
       {/* Text */}
       <div className="text-container">
+        <div className="hi-text">hi, i'm</div>
         <div className="name-text">reshmi</div>
       </div>
     </div>

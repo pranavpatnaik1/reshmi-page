@@ -15,9 +15,9 @@ body, html, .App, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f7;
+  background-color: #7c6456;
   position: relative;
-  overflow: auto;
+  overflow-x: hidden;
   overscroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -71,6 +71,7 @@ body, html, .App, #root {
   background-color: #6d4c3d;
   opacity: 0;
   animation: fadeInUp 1s forwards ease-out;
+  animation-delay: 1s;
 }
 
 .left-circle {
@@ -80,7 +81,7 @@ body, html, .App, #root {
   top: 30%;
   z-index: 2;
   box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
-  animation-delay: 0.1s;
+  animation-delay: 0.2s;
 }
 
 .right-circle {
@@ -100,7 +101,7 @@ body, html, .App, #root {
   z-index: 0;
   background: none;
   box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
-  animation-delay: 0.9s;
+  animation-delay: 1s;
 }
 
 .text-container {
@@ -108,6 +109,7 @@ body, html, .App, #root {
   display: inline-block;
   text-align: left;
   z-index: 3;
+  margin-bottom: 4rem;
 }
 
 .hi-text {
@@ -121,7 +123,7 @@ body, html, .App, #root {
 
   opacity: 0;
   animation: fadeInRight 0.8s forwards ease-out;
-  animation-delay: 0.2s;
+  animation-delay: 0.4s;
 }
 
 .name-text {
@@ -130,10 +132,11 @@ body, html, .App, #root {
   color: white;
   text-shadow: 0px 2px 15px rgba(0,0,0,0.5);
   font-weight: 600;
+  font-style: italic;
 
   opacity: 0;
   animation: fadeInUp 1s forwards ease-out;
-  animation-delay: 0.6s;
+  animation-delay: 0.8s;
   position: relative;
 }
 
@@ -147,7 +150,7 @@ body, html, .App, #root {
   background-color: white;
   transform: scaleX(0);
   transform-origin: left center;
-  animation: underline 1.5s ease-out 1.6s forwards;
+  animation: underline 0.9s ease-out 1.4s forwards;
 }
 
 @keyframes underline {
@@ -189,6 +192,19 @@ body, html, .App, #root {
 }
 
 @media screen and (max-width: 480px) {
+  .container {
+    padding-top: 4rem;
+    align-items: flex-start;
+    height: auto;
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  .text-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
   .name-text {
     font-size: 6rem;
     text-shadow: 0px 2px 5px rgba(0,0,0,0.3);
@@ -197,25 +213,125 @@ body, html, .App, #root {
   .left-circle {
     width: 150px;
     height: 150px;
-    left: -50px;
+    left: -75px;
     top: 15%;
   }
 
   .right-circle {
     width: 150px;
     height: 150px;
-    right: -50px;
+    right: -75px;
   }
 
   .large-circle {
     width: 300px;
     height: 300px;
-    top: -100px;
+    top: -150px;
+    left: -50px;
   }
 
   .hi-text {
     bottom: calc(100% - 1rem);
     left: -0.5rem;
     font-size: 2rem;
+  }
+
+  .portfolio-section {
+    padding: 2rem 4%;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 0;
+  }
+
+  .portfolio-left {
+    max-width: 100%;
+  }
+
+  .portfolio-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .arch-shape {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+.portfolio-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 4rem 8%;
+  box-sizing: border-box;
+  background-color: #7c6456;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 0;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInUp 1s forwards ease-out;
+  animation-delay: 2.4s;
+}
+
+.portfolio-content {
+  max-width: 800px;
+}
+
+.portfolio-title {
+  font-size: 72px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-decoration-line: underline;
+  text-decoration-color: white;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 0.5rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #cfcfcf;
+  font-size: 24px;
+}
+
+/* Remove unused styles */
+.portfolio-left,
+.portfolio-right,
+.arch-shape,
+.description,
+.highlight {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio-section {
+    padding: 2rem 4%;
+  }
+
+  .portfolio-title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+.App {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio-section {
+    padding: 3rem 6%;
+    gap: 2rem;
   }
 }

@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import './ImageCarousel.css';
+import placeholder1 from '../assets/placeholder1.jpg';
+import placeholder2 from '../assets/placeholder2.jpg';
+import placeholder3 from '../assets/placeholder3.jpg';
+import placeholder4 from '../assets/placeholder4.jpg';
 
 const PLACEHOLDER_IMAGES = [
-  { id: 1, url: '#' },
-  { id: 2, url: '#' },
-  { id: 3, url: '#' },
-  { id: 4, url: '#' },
+  { id: 1, url: placeholder1 },
+  { id: 2, url: placeholder2 },
+  { id: 3, url: placeholder3 },
+  { id: 4, url: placeholder4 },
 ];
 
 export default function ImageCarousel() {
@@ -52,7 +56,11 @@ export default function ImageCarousel() {
       >
         <button className="carousel-button prev" onClick={prevSlide}>←</button>
         <div className="carousel-slide">
-          <div className="placeholder-image" />
+          <img 
+            src={PLACEHOLDER_IMAGES[currentIndex].url} 
+            alt={`Slide ${currentIndex + 1}`}
+            className="carousel-image"
+          />
         </div>
         <button className="carousel-button next" onClick={nextSlide}>→</button>
         

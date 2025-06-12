@@ -114,25 +114,36 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
+  min-height: 300px;
 }
 
 .banner-image {
   width: 100%;
   height: auto;
   display: block;
-  animation: fadeInFromTop 0.5s ease-out;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Remove padding from media queries since we want full width */
 @media screen and (max-width: 768px) {
   .banner-container {
-    padding: 0;
+    min-height: 200px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .banner-container {
-    padding: 0;
+    min-height: 150px;
   }
 }
 
@@ -304,7 +315,7 @@ body {
   color: var(--olive-dark, #787D5A);
   font-family: var(--font-primary);
   font-weight: 600;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.75px;
   text-align: left;
   padding-left: 20px;
   max-width: 1400px;
@@ -406,37 +417,63 @@ body {
   font-size: 36px;
   color: var(--olive-dark, #787D5A);
   text-align: center;
-  margin: 20px 0 40px 0;
+  margin: 20px auto 40px;
   font-family: var(--font-primary);
   font-weight: 600;
-  letter-spacing: 2px;
-  text-decoration: underline;
-  text-underline-offset: 8px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
 }
 
-/* Update mobile styles */
+.featured-work-title::before,
+.featured-work-title::after {
+  content: "";
+  display: block;
+  height: 1px;
+  flex: 1;
+  min-width: 50px;
+  background-color: var(--olive-dark, #787D5A);
+}
+
 @media screen and (max-width: 768px) {
   .featured-work-title {
-    font-size: 28px;
-    margin: 5px 0 30px 0;
+    font-size: 32px;
+    gap: 12px;
+    width: 92%;
+    margin: 15px auto 30px;
+  }
+
+  .featured-work-title::before,
+  .featured-work-title::after {
+    min-width: 30px;
   }
 
   .section-title {
     font-size: 24px;
-    margin-bottom: 30px;
-    padding-left: 15px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .featured-work-title {
-    font-size: 24px;
-    margin: 5px 0 25px 0;
+    font-size: 28px;
+    gap: 8px;
+    width: 95%;
+    margin: 10px auto 25px;
+  }
+
+  .featured-work-title::before,
+  .featured-work-title::after {
+    min-width: 20px;
   }
 
   .section-title {
     font-size: 20px;
-    padding-left: 10px;
   }
 }
 
@@ -572,37 +609,51 @@ body {
 
 .contact-section {
   text-align: center;
-  padding: 20px;
+  padding: 25px 15px;
   background-color: var(--sage-light, #E1E5D6);
   width: 100%;
   margin-top: auto;
+  border-top: 1px solid rgba(120, 125, 90, 0.2);
 }
 
 .contact-text {
-  font-size: 18px;
+  font-size: 15px;
   color: var(--olive-dark, #787D5A);
   font-family: var(--font-primary);
-  font-weight: 500;
+  font-weight: 400;
   margin: 0;
+  letter-spacing: 0.3px;
 }
 
 .contact-text a {
   color: var(--olive-dark, #787D5A);
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  font-weight: 500;
 }
 
 .contact-text a:hover {
-  opacity: 0.8;
+  border-bottom-color: var(--olive-dark, #787D5A);
 }
 
 @media screen and (max-width: 768px) {
   .contact-section {
-    padding: 15px;
-    margin-top: 30px;
+    padding: 20px 12px;
   }
 
   .contact-text {
-    font-size: 16px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-section {
+    padding: 18px 10px;
+  }
+
+  .contact-text {
+    font-size: 13px;
   }
 }

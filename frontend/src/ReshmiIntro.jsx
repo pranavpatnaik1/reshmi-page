@@ -128,13 +128,13 @@ const App = () => {
     <>
       <div className="social-bar">
         <div className="social-links">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://www.instagram.com/reshmi.art/" target="_blank" rel="noopener noreferrer" className="social-link">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://www.tiktok.com/@strawberrycreamsicle.exe" target="_blank" rel="noopener noreferrer" className="social-link">
             <i className="fab fa-tiktok"></i>
           </a>
-          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://ca.pinterest.com/silkmoth123/" target="_blank" rel="noopener noreferrer" className="social-link">
             <i className="fab fa-pinterest"></i>
           </a>
         </div>
@@ -148,7 +148,7 @@ const App = () => {
         <h1 className="featured-work-title">FEATURED WORK</h1>
         
         <div className="section-container paintings">
-          <h2 className="section-title">PAINTINGS</h2>
+          <h2 className="section-title"><i><u>PAINTINGS</u></i></h2>
           <div className="products-grid">
             {paintingItems.map((product, index) => (
               <div 
@@ -166,7 +166,7 @@ const App = () => {
         </div>
 
         <div className="section-container pottery">
-          <h2 className="section-title">POTTERY</h2>
+          <h2 className="section-title"><i><u>POTTERY</u></i></h2>
           <div className="products-grid">
             {potteryItems.map((product, index) => (
               <div 
@@ -184,7 +184,7 @@ const App = () => {
         </div>
 
         <div className="contact-section">
-          <p className="contact-text">Contact: <a href="mailto:reshmiraviart@gmail.com">reshmiraviart@gmail.com</a></p>
+          <p className="contact-text">made w/ <i className="fas fa-heart"></i> by reshmi</p>
         </div>
       </div>
 
